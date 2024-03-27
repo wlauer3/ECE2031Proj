@@ -1,0 +1,25 @@
+; An empty ASM program ...
+
+ORG 0
+LOOP:
+	IN Switches
+	SUB Pattern
+	JZERO NOCHANGE
+	IN Switches
+	STORE Pattern
+	OUT LEDs
+	OUT HSPG
+NOCHANGE:
+	JUMP LOOP
+
+	
+
+	
+; IO address constants
+Switches:  EQU 000
+LEDs:      EQU 001
+Timer:     EQU 002
+Hex0:      EQU 004
+Hex1:      EQU 005
+HSPG:      EQU &H50
+Pattern:   DW 0
